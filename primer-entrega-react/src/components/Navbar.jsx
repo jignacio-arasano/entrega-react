@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavbar } from './navbarContext';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const { isOpen, toggleNavbar } = useNavbar();
   console.log(isOpen);
@@ -11,9 +11,9 @@ const Navbar = () => {
           <a href="#" className="text-white font-bold text-xl">Logo</a>
         </div>
         <div className="hidden md:flex md:items-center">
-          <a href="#" className="text-white px-3 py-2">Link 1</a>
-          <a href="#" className="text-white px-3 py-2">Link 2</a>
-          <a href="#" className="text-white px-3 py-2">Link 3</a>
+          <Link to="/Home" className="text-white px-3 py-2">Home</Link>
+          <Link to="/Store" className="text-white px-3 py-2">Tienda</Link>
+          <Link to="/About" className="text-white px-3 py-2">Conocenos</Link>
         </div>
         <div className="md:hidden flex items-center">
           <button onClick={toggleNavbar} className="text-white focus:outline-none">

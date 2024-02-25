@@ -1,11 +1,10 @@
 
-
-
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Cartas from './components/productos/Cartas'
-import Footer from './components/Footer'
-import { NavbarProvider } from './components/navbarContext'
+import Home from './pages/home'
+import About from './pages/about';
+import Store from './pages/store';
+import Navbar from './components/Navbar';
+import { NavbarProvider } from './components/navbarContext';
+import { Route, Routes } from 'react-router-dom';
 function App() {
 
   return (
@@ -13,13 +12,15 @@ function App() {
     <NavbarProvider>
       <div>
         <Navbar />
-        {/* Resto de tu aplicación */}
       </div>
     </NavbarProvider>
-    
-    <Hero/>
-    <Cartas/>
-    <Footer/>
+    <Routes>
+      <Route path="/home" element={<Home/>}/>
+      <Route path="/about" element={<Store/>}/>
+      <Route path="/store" element={<About/>}/>
+
+      
+    </Routes>
     </>
   )
 }
